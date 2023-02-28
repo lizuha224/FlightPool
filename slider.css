@@ -1,0 +1,53 @@
+.wrap {
+    height: 450px;
+    margin: 50px auto 0;
+    position: relative;
+    width: 700px;
+}
+.wrap > input {
+    display: none;
+}
+.slider {
+    background-color: white;
+    height: inherit;
+    overflow: hidden;
+    position: relative;
+    width: inherit;
+}
+.slides {
+    height: inherit;
+    opacity: 0;
+    position: absolute;
+    width: inherit;
+    z-index: 0;
+    transition: 1s;
+}
+.img1 { background-image: url(../images/samolet.jpg); }
+.img2 { background-image: url(../images/samolet2.jpg); }
+.img3 { background-image: url(../images/samolet3.jpg); }
+
+.wrap .control {
+    position: absolute;
+    margin-left: -50px;
+    left: 50%;
+}
+.wrap label {
+    cursor: pointer;
+    display: inline-block;
+    height: 8px;
+    margin: 10px;
+    position: relative;
+    width: 8px;
+    border-radius: 20%;border: 2px solid darkblue;
+}
+#point1:checked ~ .control label:nth-of-type(1),
+#point2:checked ~ .control label:nth-of-type(2),
+#point3:checked ~ .control label:nth-of-type(3) {
+    background: #1E90FF;
+}
+#point1:checked ~ .slider > .img1,
+#point2:checked ~ .slider > .img2,
+#point3:checked ~ .slider > .img3 {
+    opacity: 1;
+    z-index: 1;
+}
